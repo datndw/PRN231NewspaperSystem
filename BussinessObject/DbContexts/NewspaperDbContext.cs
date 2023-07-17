@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.Emit;
+using BussinessObject.Extensions;
 using BussinessObject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -19,7 +20,7 @@ namespace BussinessObject.DbContexts
 		}
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Article> Posts { get; set; }
+        public DbSet<Article> Articles { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,7 +31,6 @@ namespace BussinessObject.DbContexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // rename AspNet table
             foreach (var entityType in builder.Model.GetEntityTypes())
             {
                 var tableName = entityType.GetTableName();

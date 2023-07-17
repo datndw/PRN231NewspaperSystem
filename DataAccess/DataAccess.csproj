@@ -9,4 +9,20 @@
   <ItemGroup>
     <ProjectReference Include="..\BussinessObject\BussinessObject.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Infrastructure\" />
+    <None Remove="ArticleRepository\" />
+    <None Remove="UserRepository\" />
+    <None Remove="CategoryRepository\" />
+    <None Remove="RoleRepository\" />
+    <None Remove="CommentRepository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+    <Folder Include="ArticleRepository\" />
+    <Folder Include="UserRepository\" />
+    <Folder Include="CategoryRepository\" />
+    <Folder Include="RoleRepository\" />
+    <Folder Include="CommentRepository\" />
+  </ItemGroup>
 </Project>
