@@ -7,11 +7,7 @@ namespace DataAccess.ArticleRepository
     {
         IList<Article> GetLatestArticle(int size);
 
-        IList<Article> GetArticlesByCategory(string category);
-
         IList<Article> GetMostViewedArticles(int size);
-
-        Article GetDetails(int year, int month, string urlSlug);
 
         void ChangePublish(Guid id);
     }

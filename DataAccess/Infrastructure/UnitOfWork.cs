@@ -1,4 +1,4 @@
-﻿using BussinessObject.DbContexts;
+﻿using DataAccess.DbContexts;
 
 namespace DataAccess.Infrastructure
 {

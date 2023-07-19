@@ -1,4 +1,4 @@
-﻿using BussinessObject.DbContexts;
+﻿using DataAccess.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Infrastructure

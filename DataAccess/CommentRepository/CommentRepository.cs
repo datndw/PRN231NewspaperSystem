@@ -1,5 +1,5 @@
 ﻿using System;
-using BussinessObject.DbContexts;
+using DataAccess.DbContexts;
 using BussinessObject.Models;
 using DataAccess.Infrastructure;
 
@@ -19,13 +19,12 @@ namespace DataAccess.CommentRepository
             return _db.Comments.Where(c => c.ArticleId == article.Id).ToList();
         }
 
-        public void Add(Guid articleId, string commentName, string commentEmail, string commentHeader, string commentText)
+        public void Add(Guid articleId, Guid userId, string commentHeader, string commentText)
         {
             var comment = new Comment()
             {
                 ArticleId = articleId,
-                Name = commentName,
-                Email = commentEmail,
+                UserId = userId,
                 CommentHeader = commentHeader,
                 CommentText = commentText,
                 CommentTime = DateTime.Now

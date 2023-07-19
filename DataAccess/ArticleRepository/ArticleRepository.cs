@@ -1,5 +1,5 @@
 ﻿using System;
-using BussinessObject.DbContexts;
+using DataAccess.DbContexts;
 using BussinessObject.Models;
 using DataAccess.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -17,15 +17,6 @@ namespace DataAccess.ArticleRepository
             var article = _db.Articles.Find(id);
             article.IsPublished = !article.IsPublished;
             _db.Update(article);
-        }
-        public IList<Article> GetArticlesByCategory(string category)
-        {
-            return _db.Articles.Where(p => p.Category.UrlSlug == category).Include(p => p.Category).ToList();
-        }
-
-        public Article GetDetails(int year, int month, string urlSlug)
-        {
-            return _db.Articles.Include(p => p.Category).Include(p => p.Comments).First(p => p.PostedOn.Year == year && p.PostedOn.Month == month && p.UrlSlug == urlSlug);
         }
 
         public IList<Article> GetLatestArticle(int size)

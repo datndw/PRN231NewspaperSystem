@@ -8,7 +8,7 @@ namespace DataAccess.CommentRepository
     {
         IList<Comment> GetCommentsForArticle(Guid articleId);
         IList<Comment> GetCommentsForArticle(Article article);
-        void Add(Guid articleId, string commentName, string commentEmail, string commentHeader, string commentText);
+        void Add(Guid articleId, Guid userId, string commentHeader, string commentText);
     }
 }
 
