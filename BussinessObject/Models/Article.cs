@@ -15,8 +15,8 @@ namespace BussinessObject.Models
 		public DateTime? DateModified { get; set; }
 		public Guid UserId { get; set; }
 
-        public ICollection<ArticleCategory> ArticleCategories { get; set; }
-        public ICollection<Comment> Comments { get; set; }
-		public User User { get; set; }
+        public virtual ICollection<ArticleCategory> ArticleCategories { get; set; }
+        public virtual ICollection<Comment>? Comments { get; set; }
+		public virtual User User { get; set; }
 	}
 }

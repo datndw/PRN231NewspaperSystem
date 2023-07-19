@@ -11,8 +11,6 @@ namespace BussinessObject.DTOs
         public int ViewCount { get; set; }
         public DateTime PostedOn { get; set; }
         public DateTime? DateModified { get; set; }
-        public Guid CategoryId { get; set; }
-        public Guid UserId { get; set; }
     }
 }
 

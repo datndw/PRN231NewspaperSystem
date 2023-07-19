@@ -10,7 +10,7 @@ namespace BussinessObject.Models
         public Guid ArticleId { get; set; }
         public Guid UserId { get; set; }
 
-        public Article Article { get; set; }
-        public User User { get; set; }
+        public virtual Article Article { get; set; }
+        public virtual User User { get; set; }
     }
 }

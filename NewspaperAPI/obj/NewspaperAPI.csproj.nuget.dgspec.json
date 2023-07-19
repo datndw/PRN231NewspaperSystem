@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/__iamdat/Projects/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj": {}
+    "/Users/__iamdat/Local/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj": {}
   },
   "projects": {
-    "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
+    "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj",
+        "projectUniqueName": "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj",
         "projectName": "BussinessObject",
-        "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj",
+        "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj",
         "packagesPath": "/Users/__iamdat/.nuget/packages/",
-        "outputPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/obj/",
+        "outputPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/__iamdat/.nuget/NuGet/NuGet.Config"
@@ -68,18 +68,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/DataAccess.csproj": {
+    "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/DataAccess.csproj",
+        "projectUniqueName": "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/DataAccess.csproj",
+        "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/DataAccess.csproj",
         "packagesPath": "/Users/__iamdat/.nuget/packages/",
-        "outputPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/obj/",
+        "outputPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/__iamdat/.nuget/NuGet/NuGet.Config"
@@ -95,8 +95,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
-                "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj"
+              "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
+                "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj"
               }
             }
           }
@@ -117,7 +117,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.9, )"
+              "version": "[6.0.20, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -152,18 +152,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/__iamdat/Projects/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj": {
+    "/Users/__iamdat/Local/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/__iamdat/Projects/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj",
+        "projectUniqueName": "/Users/__iamdat/Local/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj",
         "projectName": "NewspaperAPI",
-        "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj",
+        "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/NewspaperAPI/NewspaperAPI.csproj",
         "packagesPath": "/Users/__iamdat/.nuget/packages/",
-        "outputPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/NewspaperAPI/obj/",
+        "outputPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/NewspaperAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/__iamdat/.nuget/NuGet/NuGet.Config"
@@ -173,18 +173,18 @@
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
-          "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
-                "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj"
+              "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj": {
+                "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/BussinessObject/BussinessObject.csproj"
               },
-              "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/DataAccess.csproj": {
-                "projectPath": "/Users/__iamdat/Projects/PRN231NewspaperSystem/DataAccess/DataAccess.csproj"
+              "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/DataAccess.csproj": {
+                "projectPath": "/Users/__iamdat/Local/PRN231NewspaperSystem/DataAccess/DataAccess.csproj"
               }
             }
           }
@@ -202,6 +202,12 @@
             "Microsoft.AspNetCore.OData": {
               "target": "Package",
               "version": "[8.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.20, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -231,7 +237,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,8 +6,8 @@ namespace BussinessObject.Models
     {
         public string Name { get; set; }
         public string UrlSlug { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public ICollection<ArticleCategory> ArticleCategories { get; set; }
+        public virtual ICollection<ArticleCategory> ArticleCategories { get; set; }
     }
 }

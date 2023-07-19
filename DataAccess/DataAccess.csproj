@@ -10,28 +10,29 @@
     <ProjectReference Include="..\BussinessObject\BussinessObject.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Infrastructure\" />
-    <None Remove="ArticleRepository\" />
-    <None Remove="UserRepository\" />
-    <None Remove="CategoryRepository\" />
-    <None Remove="RoleRepository\" />
-    <None Remove="CommentRepository\" />
-    <None Remove="DbContexts\" />
     <None Remove="Extensions\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\ArticleRepository\" />
+    <None Remove="Repositories\CategoryRepository\" />
+    <None Remove="Repositories\CommentRepository\" />
+    <None Remove="DbContexts\" />
+    <None Remove="Repositories\Infrastructure\" />
+    <None Remove="Repositories\RoleRepository\" />
+    <None Remove="Repositories\UserRepository\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Infrastructure\" />
-    <Folder Include="ArticleRepository\" />
-    <Folder Include="UserRepository\" />
-    <Folder Include="CategoryRepository\" />
-    <Folder Include="RoleRepository\" />
-    <Folder Include="CommentRepository\" />
-    <Folder Include="DbContexts\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\ArticleRepository\" />
+    <Folder Include="Repositories\CategoryRepository\" />
+    <Folder Include="Repositories\CommentRepository\" />
+    <Folder Include="DbContexts\" />
+    <Folder Include="Repositories\Infrastructure\" />
+    <Folder Include="Repositories\RoleRepository\" />
+    <Folder Include="Repositories\UserRepository\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.20" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.20">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -41,5 +42,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.20" />
   </ItemGroup>
 </Project>

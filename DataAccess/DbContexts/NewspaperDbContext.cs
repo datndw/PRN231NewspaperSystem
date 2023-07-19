@@ -22,6 +22,7 @@ namespace DataAccess.DbContexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<ArticleCategory> ArticleCategories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -62,12 +63,14 @@ namespace DataAccess.DbContexts
             {
                 comment.ToTable("Comments");
                 comment.HasKey(c => c.Id);
-                comment.HasOne(c => c.Article)
+                comment.HasOne<Article>(c => c.Article)
                 .WithMany(a => a.Comments)
-                .HasForeignKey(c => c.ArticleId);
-                comment.HasOne(c => c.User)
+                .HasForeignKey(c => c.ArticleId)
+                .OnDelete(DeleteBehavior.NoAction);
+                comment.HasOne<User>(c => c.User)
                 .WithMany(u => u.Comments)
-                .HasForeignKey(c => c.UserId);
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
             });
 
             builder.Entity<Category>(category =>

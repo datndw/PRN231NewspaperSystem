@@ -1,6 +1,19 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using BussinessObject.Profiles;
+using DataAccess.DbContexts;
+using DataAccess.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+string? connectionString = builder.Configuration.GetConnectionString("NewspaperDB");
+builder.Services.AddDbContext<NewspaperDbContext>(options =>
+{
+    options.UseSqlServer(connectionString!, opt => opt.EnableRetryOnFailure());
+});
+builder.Services.AddTransient<NewspaperDbContext>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddAutoMapper(typeof(ApplicationProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

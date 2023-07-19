@@ -6,8 +6,8 @@ namespace BussinessObject.Models
 		public Guid ArticleId { get; set; }
 		public Guid CategoryId { get; set; }
 
-		public Article Article { get; set; }
-		public Category Category { get; set; }
+		public virtual Article Article { get; set; }
+		public virtual Category Category { get; set; }
 	}
 }
 
