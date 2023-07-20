@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Data;
 using AutoMapper;
 using BussinessObject.DTOs;
 using BussinessObject.Models;
 using DataAccess.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NewspaperAPI.Controllers
@@ -25,6 +27,42 @@ namespace NewspaperAPI.Controllers
             List<Article> articles = _unitOfWork.ArticleRepository.GetAll().ToList();
             List<ArticleDTO> response = _mapper.Map<List<ArticleDTO>>(articles);
             return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ArticleDTO>> Get(Guid id)
+        {
+            Article article = _unitOfWork.ArticleRepository.Find(id);
+            ArticleDTO response = _mapper.Map<ArticleDTO>(article);
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ArticleDTO>> Post([FromBody] ArticleDTO articleDTO)
+        {
+            Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
+            _unitOfWork.ArticleRepository.Insert(article);
+            return Ok(articleDTO);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put([FromBody] ArticleDTO articleDTO)
+        {
+            Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
+            _unitOfWork.ArticleRepository.Update(article);
+            return Ok(articleDTO);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            Article article = _unitOfWork.ArticleRepository.Find(id);
+            if(article == null)
+            {
+                return NotFound("Article Not Found!");
+            }
+            _unitOfWork.ArticleRepository.DeleteById(id);
+            return Ok();
         }
     }
 }
