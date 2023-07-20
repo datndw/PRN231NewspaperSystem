@@ -14,7 +14,7 @@ namespace DataAccess.Infrastructure
         public IRoleRepository RoleRepository { get; }
         public IUserRepository UserRepository { get; }
 
-        void Save();
+        Task<int> SaveAsync();
     }
 }
 

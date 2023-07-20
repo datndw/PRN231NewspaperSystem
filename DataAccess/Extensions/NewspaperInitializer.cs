@@ -28,6 +28,8 @@ namespace DataAccess.Extensions
                 new User
                 {
                     Id = Guid.NewGuid(),
+                    FirstName = "Admin",
+                    LastName = "System",
                     BirthDate = new DateTime(2001,2,3),
                     About = "Nothing to say",
                     UserName = "admin",
@@ -42,6 +44,8 @@ namespace DataAccess.Extensions
                 new User
                 {
                     Id = Guid.NewGuid(),
+                    FirstName = "Writer",
+                    LastName = "System",
                     BirthDate = new DateTime(2001,3,4),
                     About = "Nothing to say",
                     UserName = "writer",
@@ -56,6 +60,8 @@ namespace DataAccess.Extensions
                 new User
                 {
                     Id = Guid.NewGuid(),
+                    FirstName = "User",
+                    LastName = "System",
                     BirthDate = new DateTime(2001,5,6),
                     About = "Nothing to say",
                     UserName = "user",

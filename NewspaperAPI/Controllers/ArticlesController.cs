@@ -42,6 +42,7 @@ namespace NewspaperAPI.Controllers
         {
             Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
             _unitOfWork.ArticleRepository.Insert(article);
+            await _unitOfWork.SaveAsync();
             return Ok(articleDTO);
         }
 
@@ -50,6 +51,7 @@ namespace NewspaperAPI.Controllers
         {
             Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
             _unitOfWork.ArticleRepository.Update(article);
+            await _unitOfWork.SaveAsync();
             return Ok(articleDTO);
         }
 
@@ -62,6 +64,7 @@ namespace NewspaperAPI.Controllers
                 return NotFound("Article Not Found!");
             }
             _unitOfWork.ArticleRepository.DeleteById(id);
+            await _unitOfWork.SaveAsync();
             return Ok();
         }
     }

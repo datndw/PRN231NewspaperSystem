@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(NewspaperDbContext))]
-    [Migration("20230719175144_Init")]
+    [Migration("20230720075024_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,14 +73,14 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ba93d727-f83e-4cb5-acdf-63acb709872e"),
+                            Id = new Guid("4819eca8-e6d2-40a0-b1f6-bb61da98f61f"),
                             ArticleContent = "Trước trận đấu trên sân McLean Park (thành phố Napier), New Zealand đã dự đoán Việt Nam sẽ chơi phòng ngự. HLV Jitka Klimkova còn hy vọng được chứng kiến khả năng tổ chức hàng thủ của Việt Nam, với đội hình lùi sâu và kèm người chặt chẽ. Bà và các học trò vốn bị ấn tượng bởi màn trình diễn của Việt Nam trong trận thua 1-2 trên sân của số hai thế giới Đức.",
                             IsPublished = true,
                             PostedOn = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ShortDescription = "Tiền vệ phòng ngự Ria Percival, hiện khoác áo CLB nữ Tottenham, bất ngờ trước việc Việt Nam chơi phòng ngự lùi sâu trong trận giao hữu với New Zealand hôm nay",
                             Title = "Thủ quân New Zealand ngạc nhiên khi Việt Nam phòng ngự sâus",
                             UrlSlug = "thu-quan-new-zealand-ngac-nhien-khi-viet-nam-phong-ngu-sau",
-                            UserId = new Guid("10eaa00b-3b4d-4ed2-bf96-2595285b8bf1"),
+                            UserId = new Guid("0080cb24-80a2-4021-8b22-69c4f8023f6b"),
                             ViewCount = 1413
                         });
                 });
@@ -102,8 +102,8 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            ArticleId = new Guid("ba93d727-f83e-4cb5-acdf-63acb709872e"),
-                            CategoryId = new Guid("6cc6899e-c12e-4889-b70e-8543bf9dd496")
+                            ArticleId = new Guid("4819eca8-e6d2-40a0-b1f6-bb61da98f61f"),
+                            CategoryId = new Guid("e0b7de86-9ca8-4129-ad36-9c20b151c244")
                         });
                 });
 
@@ -131,7 +131,7 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6cc6899e-c12e-4889-b70e-8543bf9dd496"),
+                            Id = new Guid("e0b7de86-9ca8-4129-ad36-9c20b151c244"),
                             Description = "",
                             Name = "Thể Thao",
                             UrlSlug = "the-thao"
@@ -172,12 +172,12 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b5facf0c-5970-4f6f-93cf-f79655a4312d"),
-                            ArticleId = new Guid("ba93d727-f83e-4cb5-acdf-63acb709872e"),
+                            Id = new Guid("040f5a2c-5080-4e69-8c16-df1fc08752b1"),
+                            ArticleId = new Guid("4819eca8-e6d2-40a0-b1f6-bb61da98f61f"),
                             CommentHeader = "Nói chung là chán!",
                             CommentText = "Cả trận không cú sút trúng khung thành, không có nổi 1 trái phạt góc.",
-                            CommentTime = new DateTime(2023, 7, 20, 0, 51, 43, 869, DateTimeKind.Local).AddTicks(5020),
-                            UserId = new Guid("a649faca-6d03-443c-b624-91ef4380af02")
+                            CommentTime = new DateTime(2023, 7, 20, 14, 50, 24, 685, DateTimeKind.Local).AddTicks(7350),
+                            UserId = new Guid("7e1535e8-1767-4f46-b452-e7266213f479")
                         });
                 });
 
@@ -206,6 +206,14 @@ namespace DataAccess.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -255,55 +263,61 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4aae46c5-3a76-4f38-874d-f66dc293cad5"),
+                            Id = new Guid("3f5a588f-6c44-4982-8e34-be6c68d9e1f1"),
                             About = "Nothing to say",
                             AccessFailedCount = 0,
                             BirthDate = new DateTime(2001, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "17e3fb1c-4cd0-4075-bf18-5175385a405a",
+                            ConcurrencyStamp = "3eb017eb-0c7a-4070-b894-ef1afe62a940",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
+                            FirstName = "Admin",
+                            LastName = "System",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAELAMvo4s9H9d5+QGvatfZ8Q3Lugiou2kvCnbJbVaqLfnVEAlcOfdm+FI5ZzmSP/feA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBX9npyeouO/RxcifFve4CrfXssscOGcoW4qi+4xlthQHhI8sV38yxFofd4v3C1ehw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6fd74649-7de4-4d69-97ae-6aeeb243c514",
+                            SecurityStamp = "4daf37c1-f015-4772-9c4f-41a1fcddbef3",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = new Guid("10eaa00b-3b4d-4ed2-bf96-2595285b8bf1"),
+                            Id = new Guid("0080cb24-80a2-4021-8b22-69c4f8023f6b"),
                             About = "Nothing to say",
                             AccessFailedCount = 0,
                             BirthDate = new DateTime(2001, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "7f89d502-4948-4d7e-b291-b7d96cd55f20",
+                            ConcurrencyStamp = "51684a9f-bfd6-4edf-988e-66ec5a2968f3",
                             Email = "writer@localhost.com",
                             EmailConfirmed = true,
+                            FirstName = "Writer",
+                            LastName = "System",
                             LockoutEnabled = false,
                             NormalizedEmail = "WRITER@LOCALHOST.COM",
                             NormalizedUserName = "WRITER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI5Yjw40rwE2W7UArmHdR450euErloJU2iW2oCGcAdNLVrl8ElspQERSKmM9gwfaww==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED/RM4yBEWgQ/z2Eu49EsGC7emKDOgM6o4s0qns9841hy1NpJjFZy14+BUf3CDOcqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "43c7f0e1-8280-495d-b6f2-186f4237a9d6",
+                            SecurityStamp = "948f746e-d757-4e8a-8bb1-c572d8f535dc",
                             TwoFactorEnabled = false,
                             UserName = "writer"
                         },
                         new
                         {
-                            Id = new Guid("a649faca-6d03-443c-b624-91ef4380af02"),
+                            Id = new Guid("7e1535e8-1767-4f46-b452-e7266213f479"),
                             About = "Nothing to say",
                             AccessFailedCount = 0,
                             BirthDate = new DateTime(2001, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "4704ce7a-ff08-4d70-abc2-87b880715232",
+                            ConcurrencyStamp = "496be90e-8ca0-43f1-9a91-c6dd94b327e3",
                             Email = "user@localhost.com",
                             EmailConfirmed = true,
+                            FirstName = "User",
+                            LastName = "System",
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI0FtJaCtUYNIXcnbNYJS52B0K1PDWqT+OwpOq7qNucZwB9SXt+b6E5HfpJdS+w/PQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDOgEzZadWqO7nhFszdtgylp1wEjGjryn/oU+FcSHnXmbPJJge1L5UbiDcFy5BiBNw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bf0e00ea-9736-4177-b326-5961c721bca0",
+                            SecurityStamp = "841af8f3-8d91-40a5-a52d-b093bb088f8b",
                             TwoFactorEnabled = false,
                             UserName = "user"
                         });
@@ -339,22 +353,22 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("07280a0c-ffbd-4276-aadc-a40e8010522e"),
-                            ConcurrencyStamp = "bbb70c09-0e07-4be0-89dd-c8000171fe77",
+                            Id = new Guid("94aa02d3-19ed-4959-882d-b3457cf07a76"),
+                            ConcurrencyStamp = "836fb18f-f953-4913-800e-f0dd1e174434",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("18d7f54a-4c72-42fc-be5f-5b76181eee9b"),
-                            ConcurrencyStamp = "f95fc2d7-b799-490d-b63b-73f8b9679bba",
+                            Id = new Guid("fd67ea0b-dc51-4735-a17e-1b870f3af34f"),
+                            ConcurrencyStamp = "ede68fb4-dd45-4521-b40b-eb70f9cdf2e3",
                             Name = "Writer",
                             NormalizedName = "WRITER"
                         },
                         new
                         {
-                            Id = new Guid("25cecb33-bc96-48fe-b9ac-afd277bed361"),
-                            ConcurrencyStamp = "eecebd84-4247-4278-89af-d390e6ddb247",
+                            Id = new Guid("0c0ab1a4-3dd9-4ff0-a378-f38bd6e94cd8"),
+                            ConcurrencyStamp = "265c98b0-454a-4e2f-83b3-4a4a709429ab",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -446,18 +460,18 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("4aae46c5-3a76-4f38-874d-f66dc293cad5"),
-                            RoleId = new Guid("07280a0c-ffbd-4276-aadc-a40e8010522e")
+                            UserId = new Guid("3f5a588f-6c44-4982-8e34-be6c68d9e1f1"),
+                            RoleId = new Guid("94aa02d3-19ed-4959-882d-b3457cf07a76")
                         },
                         new
                         {
-                            UserId = new Guid("10eaa00b-3b4d-4ed2-bf96-2595285b8bf1"),
-                            RoleId = new Guid("18d7f54a-4c72-42fc-be5f-5b76181eee9b")
+                            UserId = new Guid("0080cb24-80a2-4021-8b22-69c4f8023f6b"),
+                            RoleId = new Guid("fd67ea0b-dc51-4735-a17e-1b870f3af34f")
                         },
                         new
                         {
-                            UserId = new Guid("a649faca-6d03-443c-b624-91ef4380af02"),
-                            RoleId = new Guid("25cecb33-bc96-48fe-b9ac-afd277bed361")
+                            UserId = new Guid("7e1535e8-1767-4f46-b452-e7266213f479"),
+                            RoleId = new Guid("0c0ab1a4-3dd9-4ff0-a378-f38bd6e94cd8")
                         });
                 });
 
