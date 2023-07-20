@@ -38,6 +38,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ArticleDTO>> Post([FromBody] ArticleDTO articleDTO)
         {
             Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
@@ -47,6 +48,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Put([FromBody] ArticleDTO articleDTO)
         {
             Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
@@ -56,6 +58,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Delete(Guid id)
         {
             Article article = _unitOfWork.ArticleRepository.Find(id);

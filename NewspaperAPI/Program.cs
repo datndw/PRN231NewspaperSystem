@@ -9,10 +9,51 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using NewspaperAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+AddSwaggerDoc(builder.Services);
+void AddSwaggerDoc(IServiceCollection services)
+{
+    services.AddSwaggerGen(s =>
+    {
+        s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            Description = "Newspaper Web API using JWT Authorization with Bearer scheme. \r\n\r\n" +
+            "Enter 'Bearer[space]' *Note that [space] is a space character and then your token in the token input below.\r\n\r\n" +
+            "Example: 'Bearer ABC123'",
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Type = SecuritySchemeType.ApiKey,
+            Scheme = "Bearer"
+        });
 
+        s.AddSecurityRequirement(new OpenApiSecurityRequirement()
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference()
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    },
+                    Scheme = "oauth2",
+                    Name = "Bearer",
+                    In = ParameterLocation.Header
+                },
+                new List<string>()
+            }
+        });
+
+        s.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "Newspaper"
+        });
+    });
+}
 // Add services to the container.
 string? connectionString = builder.Configuration.GetConnectionString("NewspaperDB");
 builder.Services.AddDbContext<NewspaperDbContext>(options =>
@@ -58,9 +99,9 @@ builder.Services.AddAuthorization(config =>
         policyConfig.RequireClaim("Role", "Writer");
     });
 
-    config.AddPolicy("Administrator", policyConfig =>
+    config.AddPolicy("Admin", policyConfig =>
     {
-        policyConfig.RequireClaim("Role", "Administrator");
+        policyConfig.RequireClaim("Role", "Adminr");
     });
 });
 builder.Services.AddControllers();

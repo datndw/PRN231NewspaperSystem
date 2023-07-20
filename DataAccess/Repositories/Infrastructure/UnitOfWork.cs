@@ -77,10 +77,12 @@ namespace DataAccess.Infrastructure
         {
             _db = db;
         }
+
         public async Task<int> SaveAsync()
         {
             return await _db.SaveChangesAsync();
         }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!disposed)
