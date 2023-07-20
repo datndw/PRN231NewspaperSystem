@@ -101,7 +101,7 @@ builder.Services.AddAuthorization(config =>
 
     config.AddPolicy("Admin", policyConfig =>
     {
-        policyConfig.RequireClaim("Role", "Adminr");
+        policyConfig.RequireClaim("Role", "Admin");
     });
 });
 builder.Services.AddControllers();

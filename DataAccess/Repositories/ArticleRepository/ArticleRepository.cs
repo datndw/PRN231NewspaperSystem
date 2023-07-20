@@ -19,6 +19,11 @@ namespace DataAccess.ArticleRepository
             _db.Update(article);
         }
 
+        public Article GetArticleDetails(Guid articleId)
+        {
+            return _db.Articles.Include(a => a.User).Include(a => a.Comments).ThenInclude(c => c.User).Include(a => a.ArticleCategories).ThenInclude(a => a.Category).Where(a => a.Id == articleId).First();
+        }
+
         public IList<Article> GetLatestArticle(int size)
         {
             return _db.Articles.OrderByDescending(a => a.PostedOn).Take(size).ToList();

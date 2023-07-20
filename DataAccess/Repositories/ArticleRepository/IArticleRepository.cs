@@ -9,6 +9,8 @@ namespace DataAccess.ArticleRepository
 
         IList<Article> GetMostViewedArticles(int size);
 
+        Article GetArticleDetails(Guid articleId);
+
         void ChangePublish(Guid id);
     }
 }
