@@ -302,6 +302,66 @@ namespace DataAccess.Extensions
                     PostedOn = new DateTime(2023,1,10),
                     UserId = Users[1].Id
                 },
+                new Article
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Gen Z đi muộn về sớm, nghỉ việc xóa dữ liệu, công ty bóc phốt: Ai văn minh?",
+                    UrlSlug = "gen-z-di-muon-ve-som-nghi-viec-xoa-du-lieu-cong-ty-boc-phot-ai-van-minh",
+                    ShortDescription = "Nghỉ việc xong xóa dữ liệu, 2 nhân viên gen Z bị công ty \"bóc phốt\" trên mạng xã hội. Vậy gen Z đi sớm về muộn, \"trễ deadline\", nghỉ xong xóa dữ liệu và việc công ty phơi bày sự việc... ai văn minh?",
+                    ArticleContent = "Ngày 16/7, công ty phụ kiện thời trang H., trụ sở tại TPHCM, đăng bài lên mạng xã hội tố hai nhân viên \"thiếu suy nghĩ, thiếu đạo đức, thiếu trách nhiệm\". Theo đó, hai sinh viên P.U. và P.N. làm digital marketing part-time tại công ty H.\n" +
+                    "Công ty này cho biết sau vài tháng, P.U. bị đuổi việc do \"giờ giấc làm việc không nghiêm túc, thường xuyên đi trễ, về sớm; liên tục trễ deadline; trưởng bộ phận liên hệ để giải quyết công việc đều không nghe máy, ảnh hưởng tới công việc của các bạn khác\".\n" +
+                    "Còn P.N. bị cho nghỉ việc với lý do \"kết quả làm việc yếu, không hiệu quả trong công việc, giờ công luôn tự tính cao; không liên lạc với trưởng bộ phận vì… mất điện thoại\".\n" +
+                    "Cụ thể, từ 0h15 đến 4h ngày 12/7, một nhân viên đã vào Facebook của công ty xóa khoảng 300 bài đăng với lượng tương tác nhiều nhất  mà công ty \"đã chi hàng chục tỷ đồng quảng cáo\".\n" +
+                    "Công ty cũng tố P.N. vào Google Drive của công ty \"xóa toàn bộ thông tin, hình ảnh, dữ liệu liên quan đến các đại lý/cộng tác viên\".\n" +
+                    "Phía công ty sau đó đã nhờ bộ phận kỹ thuật rà soát lịch sử thao tác, \"xác định đúng hai nhân sự này đã thực hiện các hành vi trên\".\n" +
+                    "Chia sẻ với phóng viên Dân trí, bà Nguyễn Thái Hà, Giám đốc điều hành John Hunt, một người có nhiều năm kinh nghiệm trong lĩnh vực nhân sự, cho rằng dù người lao động có làm sai thì doanh nghiệp không nên xử lý theo cách như vậy.\n" +
+                    "Công ty H. đã điều hướng, kích động dư luận tấn công cá nhân và chính cách này cũng gây ra thêm rủi ro thêm cho doanh nghiệp.\n" +
+                    "Đứng trên góc độ doanh nghiệp, bà Hà cho rằng doanh nghiệp đã có lỗ hổng về quản trị nhân sự, quản trị vận hành, quản trị hệ thống.\n",
+                    IsPublished = true,
+                    ViewCount = 1823,
+                    PostedOn = new DateTime(2023,1,10),
+                    UserId = Users[1].Id
+                },
+                new Article
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Giá xăng sắp tăng mạnh?",
+                    UrlSlug = "gia-xang-sap-tang-manh",
+                    ShortDescription = "Giá xăng dầu ngày 21/7 được dự báo tăng mạnh theo xu hướng thế giới. Nếu cơ quan quản lý không tác động đến quỹ bình ổn, giá mặt hàng nhiên liệu có thể tăng 800-1.000 đồng/lít.",
+                    ArticleContent = "Trao đổi với phóng viên Dân trí, lãnh đạo một số doanh nghiệp xăng dầu cho biết thời gian qua, giá xăng thành phẩm bình quân trên thị trường Singapore có xu hướng tăng so với kỳ trước. Mức tăng tương đối mạnh.\n" +
+                    "Dựa trên diễn biến giá thế giới, các doanh nghiệp dự báo trong kỳ điều hành ngày 21/7, xăng E5 RON 92 và RON 95 trong nước có thể tăng 800-1.000 đồng/lít, dầu diesel có thể tăng 500-600 đồng/lít. Nếu liên Bộ Công Thương, Bộ Tài chính chi quỹ bình ổn, giá xăng dầu có thể tăng ít hơn. \n" +
+                    "Tại kỳ điều chỉnh gần nhất ngày 11/7, xăng E5 RON 92 giảm 60 đồng/lít, xuống 20.410 đồng/lít; xăng RON 95 tăng 70 đồng/lít, lên 21.490 đồng/lít. Trong khi đó, giá dầu diesel tăng 450 đồng/lít lên 18.610 đồng/lít.\n" +
+                    "Mới đây, Phó Thủ tướng Trần Hồng Hà đã ký quyết định phê duyệt quy hoạch hạ tầng dự trữ, cung ứng xăng dầu, khí đốt quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050.\n" +
+                    "Cụ thể, với hạ tầng xăng dầu, dự trữ dầu thô và sản phẩm chế biến xăng dầu đáp ứng tối thiểu 20-25 ngày nhập ròng, xăng dầu thương mại đáp ứng 30-35 ngày, còn hạ tầng dự trữ quốc gia là 15-30 ngày nhập khẩu ròng.\n" +
+                    "Với LPG, hạ tầng dự trữ đạt sức chứa tới 800.000 tấn giai đoạn 2021-2030 và tới 900.000 tấn giai đoạn sau năm 2030.\n" +
+                    "Do vậy, Việt Nam sẽ xây mới 500.000m3 kho chứa xăng dầu đến 2030 phục vụ dự trữ quốc gia. Kho dự trữ dầu thô sẽ được xây mới 1-2 kho tại các khu vực gần nhà máy lọc dầu (Dung Quất, Nghi Sơn, Long Sơn), với tổng công suất 1-2 triệu tấn dầu thô.\n" +
+                    "Với hạ tầng dự trữ thương mại, sẽ tiếp tục khai thác 89 kho hiện nay và mở rộng, nâng công suất các kho thương mại lên khoảng 1,4 triệu m3. Cùng đó, 59 kho xăng dầu thương mại sẽ được xây mới tại các địa phương, tổng công suất khoảng 5,1 triệu m3.\n" +
+                    "Hệ thống đường ống xăng dầu hiện có với 580,9km cũng sẽ được đầu tư nâng cấp sau đó xây mới tuyến ống dẫn nhiên liệu bay từ kho đầu nguồn tại TP.HCM, Đồng Nai, Bà Rịa - Vũng Tàu về kho sân bay Long Thành. \n",
+                    IsPublished = true,
+                    ViewCount = 5245,
+                    PostedOn = new DateTime(2022,11,10),
+                    UserId = Users[1].Id
+                },
+                new Article
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "EVN có chủ tịch mới, là một Thứ trưởng Bộ Công Thương\n",
+                    UrlSlug = "evn-co-chu-tich-moi-la-mot-thu-truong-bo-cong-thuong",
+                    ShortDescription = "Thủ tướng vừa có quyết định điều động, bổ nhiệm ông Đặng Hoàng An, Thứ trưởng Bộ Công Thương, giữ chức Chủ tịch Hội đồng thành viên Tập đoàn Điện lực Việt Nam",
+                    ArticleContent = "Thủ tướng Chính phủ vừa có quyết định về việc điều động, bổ nhiệm ông Đặng Hoàng An, Thứ trưởng Bộ Công Thương, giữ chức Chủ tịch Hội đồng thành viên Tập đoàn Điện lực Việt Nam (EVN). Quyết định bổ nhiệm có hiệu lực kể từ ngày 19/7.\n" +
+                    "Chủ tịch EVN trước đó là ông Dương Quang Thành. Ông Thành có quyết định nghỉ hưu từ ngày 1/5.\n" +
+                    "Ông Đặng Hoàng An sinh ngày 16/10/1965, quê quán Hiệp Hòa, Bắc Giang. Ông An được giới thiệu tốt nghiệp Đại học chuyên ngành Năng lượng điện tại CH Séc và tốt nghiệp Thạc sĩ Quản lý hệ thống điện và Thạc sĩ Quản trị kinh doanh tại Học viện Công nghệ châu Á tại Thái Lan, thông thạo các ngoại ngữ tiếng Anh, tiếng Tiệp Khắc, trình độ lý luận chính trị cao cấp.\n" +
+                    "Trước khi được bổ nhiệm Thứ trưởng Bộ Công Thương, ông Đặng Hoàng An đã trải qua nhiều vị trí công tác và đảm nhận các chức trách lãnh đạo quản lý trong ngành điện.\n" +
+                    "Cụ thể, ông từng làm Phó giám đốc Trung tâm Điều độ Hệ thống điện Quốc gia từ năm 1993 đến 2004, Trưởng Ban Kỹ thuật Lưới điện EVN từ 2004 đến 2006, Phó giám đốc Công ty Truyền tải điện 1 từ 2006 đến 2007, Trưởng Ban Kế hoạch EVN từ 2007 đến 2008, Phó tổng giám đốc EVN từ 2008 đến 2015 và Tổng giám đốc EVN từ tháng 7/2015 đến 5/2018.\n" +
+                    "Ông Đặng Hoàng An quay trở lại EVN đúng vào thời điểm tập đoàn này đang phải đối mặt với nhiều khó khăn liên quan đến dòng tiền và đảm bảo cung cấp điện.\n" +
+                    "Theo báo cáo tài chính hợp nhất đã kiểm toán năm 2022, doanh thu hợp nhất của tập đoàn năm qua đạt 463.000 tỷ đồng, tăng 8% so với cùng kỳ năm 2021. Trong đó, doanh thu từ bán điện chiếm tới 98%, đạt trên 456.000 tỷ đồng.\n" +
+                    "Tuy nhiên, do giá vốn hàng bán tăng nhanh hơn doanh thu nên lợi nhuận gộp của EVN giảm mạnh, từ 38.264 tỷ đồng còn 10.580 tỷ đồng. Số liệu này, theo lãnh đạo EVN từng cho biết do giá bán điện thấp hơn giá mua vào.\n" +
+                    "Trong kỳ, doanh thu hoạt động tài chính của EVN giảm mạnh, trong khi các chi phí khác đều tăng. Kết quả, EVN ghi nhận lỗ 19.515 tỷ đồng từ hoạt động kinh doanh và lỗ sau thuế là 20.747 tỷ đồng. Riêng công ty mẹ EVN lỗ sau thuế 22.256 tỷ đồng.\n",
+                    IsPublished = true,
+                    ViewCount = 4278,
+                    PostedOn = new DateTime(2023,7,14),
+                    UserId = Users[1].Id
+                },
             };
 
 
@@ -315,7 +375,7 @@ namespace DataAccess.Extensions
                     CommentHeader = "Carlos Alcaraz lên ngôi ở Wimbledon 2023 đầy thuyết phục",
                     CommentText = "12 chức vô địch, tuần thứ 29 giữ ngôi số một thế giới, ghê thật! Mãi giữ vững phong độ anh nhé",
                     CommentTime = DateTime.Now
-                }
+                },
             };
 
             var Roles = new IdentityRole<Guid>[]
@@ -390,6 +450,46 @@ namespace DataAccess.Extensions
                 {
                     ArticleId = Articles[5].Id,
                     CategoryId = Categories[5].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[6].Id,
+                    CategoryId = Categories[6].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[7].Id,
+                    CategoryId = Categories[7].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[8].Id,
+                    CategoryId = Categories[8].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[9].Id,
+                    CategoryId = Categories[5].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[10].Id,
+                    CategoryId = Categories[7].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[11].Id,
+                    CategoryId = Categories[4].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[6].Id,
+                    CategoryId = Categories[2].Id
+                },
+                new ArticleCategory
+                {
+                    ArticleId = Articles[2].Id,
+                    CategoryId = Categories[3].Id
                 },
             };
 

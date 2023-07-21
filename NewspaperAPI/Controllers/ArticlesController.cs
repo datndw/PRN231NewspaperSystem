@@ -41,6 +41,7 @@ namespace NewspaperAPI.Controllers
         public async Task<ActionResult<ArticleDetailDTO>> GetDetails(Guid id)
         {
             Article article = _unitOfWork.ArticleRepository.GetArticleDetails(id);
+            article.ViewCount += 1;
             ArticleDetailDTO response = _mapper.Map<ArticleDetailDTO>(article);
             return Ok(response);
         }
