@@ -93,6 +93,8 @@ namespace NewspaperAPI.Services
 
             var user = new User
             {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
                 Email = request.Email,
                 UserName = request.UserName,
                 EmailConfirmed = true
