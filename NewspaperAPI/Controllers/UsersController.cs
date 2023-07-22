@@ -35,15 +35,6 @@ namespace NewspaperAPI.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<UserDTO>> Post([FromBody] UserDTO userDTO)
-        {
-            User user = _mapper.Map<UserDTO, User>(userDTO);
-            _unitOfWork.UserRepository.Insert(user);
-            await _unitOfWork.SaveAsync();
-            return Ok(userDTO);
-        }
-
         [HttpPut]
         public async Task<ActionResult> Put([FromBody] UserDTO userDTO)
         {

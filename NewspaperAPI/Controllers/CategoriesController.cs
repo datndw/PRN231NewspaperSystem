@@ -38,12 +38,12 @@ namespace NewspaperAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult<CategoryDTO>> Post([FromBody] CategoryDTO categoryDTO)
+        public async Task<ActionResult<CategoryCreateDTO>> Post([FromBody] CategoryCreateDTO categoryCreateDTO)
         {
-            Category category = _mapper.Map<CategoryDTO, Category>(categoryDTO);
+            Category category = _mapper.Map<CategoryCreateDTO, Category>(categoryCreateDTO);
             _unitOfWork.CategoryRepository.Insert(category);
             await _unitOfWork.SaveAsync();
-            return Ok(categoryDTO);
+            return Ok(categoryCreateDTO);
         }
 
         [HttpPut]

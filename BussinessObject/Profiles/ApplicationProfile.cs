@@ -25,7 +25,11 @@ namespace BussinessObject.Profiles
                 .ReverseMap();
             CreateMap<Article, ArticleDTO>()
                 .ReverseMap();
+            CreateMap<Article, ArticleCreateDTO>()
+                .ReverseMap();
             CreateMap<Category, CategoryDTO>()
+                .ReverseMap();
+            CreateMap<Category, CategoryCreateDTO>()
                 .ReverseMap();
             CreateMap<Comment, CommentDTO>()
                 .ReverseMap();

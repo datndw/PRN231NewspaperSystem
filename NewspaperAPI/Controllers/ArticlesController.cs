@@ -56,12 +56,12 @@ namespace NewspaperAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult<ArticleDTO>> Post([FromBody] ArticleDTO articleDTO)
+        public async Task<ActionResult<ArticleCreateDTO>> Post([FromBody] ArticleCreateDTO articleCreateDTO)
         {
-            Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
+            Article article = _mapper.Map<ArticleCreateDTO, Article>(articleCreateDTO);
             _unitOfWork.ArticleRepository.Insert(article);
             await _unitOfWork.SaveAsync();
-            return Ok(articleDTO);
+            return Ok(articleCreateDTO);
         }
 
         [HttpPut]
