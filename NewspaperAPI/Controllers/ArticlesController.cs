@@ -42,6 +42,7 @@ namespace NewspaperAPI.Controllers
         {
             Article article = _unitOfWork.ArticleRepository.GetArticleDetails(id);
             article.ViewCount += 1;
+            _unitOfWork.ArticleRepository.Update(article);
             ArticleDetailDTO response = _mapper.Map<ArticleDetailDTO>(article);
             return Ok(response);
         }
@@ -55,7 +56,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Writer")]
         public async Task<ActionResult<ArticleCreateDTO>> Post([FromBody] ArticleCreateDTO articleCreateDTO)
         {
             Article article = _mapper.Map<ArticleCreateDTO, Article>(articleCreateDTO);
@@ -65,7 +66,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Writer")]
         public async Task<ActionResult> Put([FromBody] ArticleDTO articleDTO)
         {
             Article article = _mapper.Map<ArticleDTO, Article>(articleDTO);
@@ -75,7 +76,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Writer")]
         public async Task<ActionResult> Delete(Guid id)
         {
             Article article = _unitOfWork.ArticleRepository.Find(id);
