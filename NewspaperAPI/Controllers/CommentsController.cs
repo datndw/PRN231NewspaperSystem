@@ -39,12 +39,12 @@ namespace NewspaperAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ActionResult<CommentDTO>> Post([FromBody] CommentDTO commentDTO)
+        public async Task<ActionResult<CommentDTO>> Post([FromBody] CommentCreateDTO commentCreateDTO)
         {
-            Comment comment = _mapper.Map<CommentDTO, Comment>(commentDTO);
+            Comment comment = _mapper.Map<CommentCreateDTO, Comment>(commentCreateDTO);
             _unitOfWork.CommentRepository.Insert(comment);
             await _unitOfWork.SaveAsync();
-            return Ok(commentDTO);
+            return Ok(commentCreateDTO);
         }
 
         [HttpPut]

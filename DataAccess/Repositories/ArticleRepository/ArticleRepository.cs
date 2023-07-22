@@ -21,7 +21,23 @@ namespace DataAccess.ArticleRepository
 
         public Article GetArticleDetails(Guid articleId)
         {
-            return _db.Articles.Include(a => a.User).Include(a => a.Comments).ThenInclude(c => c.User).Include(a => a.ArticleCategories).ThenInclude(a => a.Category).Where(a => a.Id == articleId).First();
+            return _db.Articles.Include(a => a.User)
+                .Include(a => a.Comments)
+                .ThenInclude(c => c.User)
+                .Include(a => a.ArticleCategories)
+                .ThenInclude(a => a.Category)
+                .Where(a => a.Id == articleId)
+                .First();
+        }
+
+        public IList<Article> GetArticlesByCategory(Guid categoryId)
+        {
+            return _db.Articles
+                .Include(a => a.ArticleCategories)
+                .ThenInclude(ac => ac.Category)
+                .Where(a => a.ArticleCategories
+                .Any(c => c.CategoryId == categoryId))
+                .ToList();
         }
 
         public IList<Article> GetLatestArticle(int size)

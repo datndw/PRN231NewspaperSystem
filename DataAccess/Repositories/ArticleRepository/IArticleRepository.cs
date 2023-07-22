@@ -11,6 +11,8 @@ namespace DataAccess.ArticleRepository
 
         Article GetArticleDetails(Guid articleId);
 
+        IList<Article> GetArticlesByCategory(Guid categoryId);
+
         void ChangePublish(Guid id);
     }
 }

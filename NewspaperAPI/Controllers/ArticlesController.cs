@@ -46,6 +46,14 @@ namespace NewspaperAPI.Controllers
             return Ok(response);
         }
 
+        [HttpGet("ByCategory/{id}")]
+        public async Task<ActionResult<List<ArticleDTO>>> GetArticleByCategory(Guid id)
+        {
+            List<Article> articles = _unitOfWork.ArticleRepository.GetArticlesByCategory(id).ToList();
+            List<ArticleDTO> response = _mapper.Map<List<ArticleDTO>>(articles);
+            return Ok(response);
+        }
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ArticleDTO>> Post([FromBody] ArticleDTO articleDTO)

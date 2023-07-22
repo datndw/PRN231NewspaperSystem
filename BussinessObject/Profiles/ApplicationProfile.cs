@@ -16,6 +16,8 @@ namespace BussinessObject.Profiles
             CreateMap<Comment, CommentDetailDTO>()
                 .ForMember(dest => dest.UserFullName, opt => opt.MapFrom(src => src.User.FirstName + " " + src.User.LastName))
                 .ReverseMap();
+            CreateMap<Comment, CommentCreateDTO>()
+                .ReverseMap();
             CreateMap<Article, ArticleDetailDTO>()
                 .ForMember(dest => dest.WriterName, opt => opt.MapFrom(src => src.User.FirstName + " " + src.User.LastName))
                 .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments))
