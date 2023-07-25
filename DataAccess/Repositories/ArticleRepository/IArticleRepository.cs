@@ -14,5 +14,7 @@ namespace DataAccess.ArticleRepository
         IList<Article> GetArticlesByCategory(Guid categoryId);
 
         void ChangePublish(Guid id);
+
+        IList<Article> GetByKeyword(string keyword);
     }
 }

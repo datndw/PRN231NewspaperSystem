@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.ArticleRepository
 {
-	public class ArticleRepository : GenericRepository<Article>, IArticleRepository
+    public class ArticleRepository : GenericRepository<Article>, IArticleRepository
 	{
 		public ArticleRepository(NewspaperDbContext db) : base(db)
 		{
@@ -37,6 +37,15 @@ namespace DataAccess.ArticleRepository
                 .ThenInclude(ac => ac.Category)
                 .Where(a => a.ArticleCategories
                 .Any(c => c.CategoryId == categoryId))
+                .ToList();
+        }
+
+        public IList<Article> GetByKeyword(string keyword)
+        {
+            return _db.Articles
+                .Include(a => a.ArticleCategories)
+                .ThenInclude(a => a.Category)
+                .Where(a => a.Title.ToUpper().Contains(keyword.ToUpper()))
                 .ToList();
         }
 

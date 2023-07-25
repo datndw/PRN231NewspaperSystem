@@ -38,7 +38,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<ActionResult<CommentCreateDTO>> Post([FromBody] CommentCreateDTO commentCreateDTO)
         {
             Comment comment = _mapper.Map<CommentCreateDTO, Comment>(commentCreateDTO);
@@ -48,7 +48,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<ActionResult> Put([FromBody] CommentDTO commentDTO)
         {
             Comment comment = _mapper.Map<CommentDTO, Comment>(commentDTO);
@@ -58,7 +58,7 @@ namespace NewspaperAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<ActionResult> Delete(Guid id)
         {
             Comment comment = _unitOfWork.CommentRepository.Find(id);

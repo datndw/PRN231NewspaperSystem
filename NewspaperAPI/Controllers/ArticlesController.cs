@@ -29,6 +29,23 @@ namespace NewspaperAPI.Controllers
             return Ok(response);
         }
 
+        [HttpGet("Search/{keyword}")]
+        public async Task<ActionResult<List<ArticleDTO>>> Get(string? keyword)
+        {
+            List<Article> articles = new();
+            if (keyword == null || keyword.Trim() == "")
+            {
+                articles = _unitOfWork.ArticleRepository.GetAll().ToList();
+            }
+            else
+            {
+                articles = _unitOfWork.ArticleRepository.GetByKeyword(keyword).ToList();
+            }
+            
+            List<ArticleDTO> response = _mapper.Map<List<ArticleDTO>>(articles);
+            return Ok(response);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<ArticleDTO>> Get(Guid id)
         {
